@@ -8,16 +8,16 @@
 
 import SwiftUI
 
-final class EmojiMemoryGame {
+final class EmojiMemoryGame: ObservableObject {
     
-    private var model = EmojiMemoryGame.createMemoryGame()
+    @Published private var model = EmojiMemoryGame.createMemoryGame()
     
     // MARK: - Access to the Model
     
     var cards: [MemoryGame<String>.Card] {
         return model.cards
     }
-    
+        
     // MARK: - Intent(s)
     
     func choose(card: MemoryGame<String>.Card) {
